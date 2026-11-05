@@ -30,7 +30,11 @@ open dist/DockSlot.app
 
 Na primeira abertura, ative o DockSlot em **Ajustes do Sistema › Privacidade e Segurança › Acessibilidade**.
 
-O app é assinado localmente (ad-hoc). Cada nova compilação gera uma assinatura diferente, e por isso a permissão precisa ser concedida de novo.
+O app é assinado localmente (ad-hoc). Cada nova compilação gera uma assinatura diferente, e por isso a permissão precisa ser concedida de novo. Se o DockSlot já aparecer ativado na lista e a linha não surgir, limpe a entrada antiga e abra o app outra vez:
+
+```bash
+tccutil reset Accessibility io.github.amondf.dockslot
+```
 
 ## Uso
 
@@ -62,6 +66,7 @@ dist/DockSlot.app/Contents/MacOS/DockSlot clear
 
 ## Bom saber
 
+- Ao arrastar uma vaga, a linha acompanha o cursor até você soltar.
 - Se o DockSlot for fechado, as vagas continuam no Dock, mas ficam sem a linha.
 - Todo espaçador do Dock recebe uma linha, inclusive os criados por outros meios.
 - Antes de cada alteração, a lista anterior é salva em `~/Library/Application Support/DockSlot/Backups`.
