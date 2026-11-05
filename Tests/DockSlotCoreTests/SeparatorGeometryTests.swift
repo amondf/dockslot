@@ -14,6 +14,17 @@ import Testing
         #expect(rect.midY == 1035)
     }
 
+    @Test func reproduzMedidasDoTracoNativo() {
+        let rect = SeparatorGeometry.lineRect(
+            spacer: CGRect(x: 893.7, y: 5, width: 34, height: 84),
+            reference: CGRect(x: 1131.7, y: 5, width: 30.6, height: 84),
+            axis: .horizontal, thickness: 1,
+            lengthRatio: SeparatorGeometry.nativeLengthRatio, scale: 1)
+        #expect(rect.height == 62)
+        #expect(rect.minY == 16)
+        #expect(rect.maxY == 78)
+    }
+
     @Test func linhaHorizontalNoDockLateral() {
         let rect = SeparatorGeometry.lineRect(
             spacer: CGRect(x: 0, y: 300, width: 70, height: 30),

@@ -12,6 +12,9 @@ public enum DockAxis: Sendable {
 }
 
 public enum SeparatorGeometry {
+    /// Fração da altura do item que o traço nativo ocupa: 62 pt visíveis em um item de 84 pt.
+    public static let nativeLengthRatio: CGFloat = 62.0 / 84.0
+
     /// Calcula o retângulo da linha, nas coordenadas de entrada.
     ///
     /// - Parameters:

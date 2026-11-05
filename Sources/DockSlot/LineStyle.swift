@@ -1,4 +1,5 @@
 import AppKit
+import DockSlotCore
 
 /// Aparência da linha, medida a partir do separador nativo.
 ///
@@ -18,7 +19,7 @@ struct LineStyle {
             : defaults.number(for: "lineOpacityLight", fallback: 0.39)
         return LineStyle(
             thickness: defaults.number(for: "lineThickness", fallback: 1),
-            lengthRatio: defaults.number(for: "lineLengthRatio", fallback: 1),
+            lengthRatio: defaults.number(for: "lineLengthRatio", fallback: SeparatorGeometry.nativeLengthRatio),
             color: (isDark ? NSColor.white : NSColor.black).withAlphaComponent(opacity)
         )
     }
